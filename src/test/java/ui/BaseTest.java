@@ -22,9 +22,9 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://automationexercise.com");
     }
+
 
     @AfterMethod
     public void tearDown(ITestResult result) {
