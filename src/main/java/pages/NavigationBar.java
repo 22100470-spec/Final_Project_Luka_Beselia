@@ -18,11 +18,7 @@ public class NavigationBar {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // ---------------------
-    // Page actions
-    // ---------------------
 
-    // Click "Signup / Login" link
     public void clickSignupLogin() {
         WebElement signupLogin = wait.until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Signup / Login')]"))
@@ -30,9 +26,8 @@ public class NavigationBar {
         signupLogin.click();
     }
 
-    // Click "Logout" link
+
     public void clickLogout() {
-        // If user is not logged in, nothing to do
         if (!isLoggedInAsVisible()) {
             return;
         }
@@ -43,10 +38,10 @@ public class NavigationBar {
             );
             logout.click();
         } catch (Exception e) {
-            // Ignore if Logout is not clickable; test will still continue
+            // ignore if  not clickable
         }
     }
-    // Check if "Logged in as <user>" is visible
+
     public boolean isLoggedInAsVisible() {
         try {
             wait.until(
@@ -58,7 +53,7 @@ public class NavigationBar {
         }
     }
 
-    // Check if "Signup / Login" link is visible (for post-logout validation)
+
     public boolean isSignupLoginVisible() {
         try {
             wait.until(
@@ -70,7 +65,7 @@ public class NavigationBar {
         }
     }
 
-    // Check if "Account Deleted!" message is visible
+
     public boolean isAccountDeletedVisible() {
         try {
             wait.until(
@@ -82,7 +77,7 @@ public class NavigationBar {
         }
     }
 
-    // Click "Continue" after account deletion
+
     public void clickContinueAfterDelete() {
         WebElement continueBtn = wait.until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Continue']"))

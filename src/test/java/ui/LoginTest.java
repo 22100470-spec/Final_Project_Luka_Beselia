@@ -58,23 +58,23 @@ public class LoginTest extends BaseTest {
         NavigationBar navBar = new NavigationBar(driver);
         SignupLoginPage signupLoginPage = new SignupLoginPage(driver);
 
-        // Go to Signup/Login page
+
         navBar.clickSignupLogin();
         signupLoginPage.isNewUserSignupVisible();
 
-        // Try to create the user; if flow fails (e.g. elements not found), just return
+
         try {
             signupLoginPage.enterSignupName("Login User");
             signupLoginPage.enterSignupEmail(LOGIN_EMAIL);
             signupLoginPage.clickSignupButton();
 
-            // If email already exists, just return to home
+
             if (signupLoginPage.isEmailExistsErrorVisible()) {
                 driver.get("https://automationexercise.com");
                 return;
             }
 
-            // Otherwise complete the registration
+
             RegistrationPage page = new RegistrationPage(driver);
             page.enterPassword(LOGIN_PASSWORD);
             page.selectDay("10");
@@ -93,12 +93,12 @@ public class LoginTest extends BaseTest {
             page.isAccountCreatedVisible();
             page.clickContinueButton();
 
-            // Logout and go back home so login tests start from clean state
+
             navBar.isLoggedInAsVisible();
             navBar.clickLogout();
             driver.get("https://automationexercise.com");
         } catch (Exception e) {
-            // If anything goes wrong while creating the user, continue tests without failing here
+
             driver.get("https://automationexercise.com");
         }
     }
@@ -118,7 +118,7 @@ public class LoginTest extends BaseTest {
 
     @Step("Verify user is logged in")
     private void verifyLoggedIn(NavigationBar navBar) {
-        // Best-effort check; do not fail the whole test if element is not found
+
         navBar.isLoggedInAsVisible();
     }
 

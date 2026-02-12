@@ -39,19 +39,19 @@ public class RegistrationTest extends BaseTest {
             page.enterMobileNumber("1234567890");
             page.clickCreateAccount();
 
-            // Verify account created
+
             Assert.assertTrue(page.isAccountCreatedVisible(), "Account creation message is not visible!");
 
             page.clickContinueButton();
 
-            // Verify user is logged in
+
             Assert.assertTrue(navBar.isLoggedInAsVisible(), "Logged in as message is not visible!");
 
-            // Logout after registration
+
             navBar.clickLogout();
             Assert.assertTrue(navBar.isSignupLoginVisible(), "Signup/Login button not visible after logout!");
         } catch (Exception e) {
-            // Allow test to continue without failing hard if registration flow changes
+            // a
         }
     }
 
@@ -64,10 +64,10 @@ public class RegistrationTest extends BaseTest {
         SignupLoginPage signupLoginPage = new SignupLoginPage(driver);
         signupLoginPage.isNewUserSignupVisible();
         signupLoginPage.enterSignupName("John Doe");
-        signupLoginPage.enterSignupEmail("johndoe@example.com"); // Already registered email
+        signupLoginPage.enterSignupEmail("johndoe@example.com");
         signupLoginPage.clickSignupButton();
 
-        // Verify error message
+
         Assert.assertTrue(signupLoginPage.isEmailExistsErrorVisible(),
                 "Email already exists message is not visible!");
     }

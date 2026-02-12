@@ -61,7 +61,7 @@ public class ContactUsPage {
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
             alert.accept();
         } catch (Exception e) {
-            // Some site versions don't show an alert after submit; safely ignore
+            // ignore
         }
     }
 

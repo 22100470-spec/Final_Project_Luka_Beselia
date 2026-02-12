@@ -17,8 +17,8 @@ public abstract class BaseApiTest {
 
         requestSpec = new RequestSpecBuilder()
                 .setBaseUri(RestAssured.baseURI)
-                .addFilter(new AllureRestAssured())   // attaches request/response to Allure
-                .setContentType(ContentType.URLENC)   // form-url-encoded for POSTs
+                .addFilter(new AllureRestAssured())
+                .setContentType(ContentType.URLENC)
                 .build();
     }
 }

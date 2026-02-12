@@ -16,7 +16,7 @@ public class RegistrationPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // Signup form
+
     public void enterName(String name) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("name"))).sendKeys(name);
     }
@@ -30,7 +30,7 @@ public class RegistrationPage {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-qa='signup-button']"))).click();
     }
 
-    // Account information
+
     public void enterPassword(String password) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password"))).sendKeys(password);
     }
@@ -55,7 +55,7 @@ public class RegistrationPage {
         driver.findElement(By.id("optin")).click();
     }
 
-    // Address info
+
     public void enterFirstName(String firstName) {
         driver.findElement(By.id("first_name")).sendKeys(firstName);
     }
@@ -104,7 +104,7 @@ public class RegistrationPage {
         driver.findElement(By.xpath("//a[@data-qa='continue-button']")).click();
     }
 
-    // Visibility checks
+
     public boolean isAccountCreatedVisible() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//b[text()='Account Created!']"))).isDisplayed();

@@ -9,8 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class LoginApiTest extends BaseApiTest {
 
-    // Use an actually existing user on AutomationExercise.
-    // If your UI test created "johndoe@example.com" with password "123456", reuse that here.
+
     private static final String VALID_EMAIL = "johndoe@example.com";
     private static final String VALID_PASSWORD = "123456";
 

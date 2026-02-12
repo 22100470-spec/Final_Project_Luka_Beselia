@@ -35,13 +35,13 @@ public class ProductsTest extends BaseTest {
 
     @Step("Navigate to Products page")
     private void navigateToProductsPage() {
-        // Try clicking the Products link first
+
         try {
             driver.findElement(By.xpath("//a[@href='/products']")).click();
         } catch (Exception e) {
-            // Fallback: ignore and navigate directly if needed
+            // fallback
         }
-        // Ensure we are on the /products page
+
         try {
             new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10))
                     .until(org.openqa.selenium.support.ui.ExpectedConditions.or(
