@@ -48,10 +48,12 @@
 - **pom.xml** – Maven configuration
 - **testng.xml** – TestNG suite (separate UI and API tests)
 
-5) ინსტრუქციები:
+5) გაშვების ინსტრუქციები:
     1) გაუშვით ყველა ტესტი (UI + API)
     2) mvn clean test
     3) allure generate allure-results -o allure-report --clean
     4) allure open allure-report
-     
+  
+
+
    
